@@ -2,15 +2,27 @@
 
 import React, { useEffect, useState, useRef } from "react";
 
-let initialVal = 10;
+let initialVal = 3662;
 export default function Count() {
-  let [count, setCount] = useState(10);
+  let [count, setCount] = useState(initialVal);
   let intervalRef = useRef(null);
 
+let withZero=(val)=>{
+  return val<=9?`0${val}`:val
+}
+
+  let handleTimer=(second)=>{
+    let sec=Math.floor(second%60)
+    let minut=Math.floor((second/60)%60)
+    let hrs=Math.floor(second/3600)
+
+    return <h1>{withZero(hrs)}:{withZero(minut)}:{withZero(sec)}</h1>
+  }
+
   let handleStart = () => {
-    // if(intervalRef.current!==null){  //**Problem** after stoping again not starting
-    //     return
-    // }
+    if(intervalRef.current!==null){  
+        return
+    }
     intervalRef.current = setInterval(() => {
       console.log(Date.now());
       setCount((prev) => {
@@ -26,6 +38,7 @@ export default function Count() {
 
   let handleStop = () => {
     clearInterval(intervalRef.current);
+    intervalRef.current=null;
   };
   let handleReset = () => {
     handleStop();
@@ -35,14 +48,15 @@ export default function Count() {
   // console.log(intervalRef.current)
   useEffect(() => {
     let cleanUp = () => {
-      clearInterval(intervalRef.current);
+    //   clearInterval(intervalRef.current);
+    handleStop()
     };
     return cleanUp;
   }, []);
 
   return (
     <div>
-      <h1>Count: {count}</h1>
+     {handleTimer(count)}
       <button onClick={handleStart}> start</button>
       <button onClick={handleStop}>stop</button>
       <button onClick={handleReset}>reset</button>
