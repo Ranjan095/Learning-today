@@ -1,62 +1,85 @@
 /** @format */
 
 import { useEffect, useState } from "react";
-import { Link ,NavLink} from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useSearchParams } from "react-router-dom";
 
+let getNum = (num) => {
+  let val = Number(num);
 
+  return val < 1 || typeof val !== "number" ? 1 : val;
+  
+};
 
 export default function Users() {
   let [users, setUsers] = useState([]);
-  let[page,setpage]=useState(1);
-  let [loading,setLoading]=useState(false)
-  let [searchParams,setsearchParams]=useSearchParams();
+  let [loading, setLoading] = useState(false);
+  let [searchParams, setsearchParams] = useSearchParams();
+  let [page, setpage] = useState(getNum(searchParams.get("page")));
 
+  // console.log(typeof getNum(searchParams.get('page')))
 
-  
-
-  
- 
   let getData = () => {
     return fetch(`https://reqres.in/api/users?page=${page}`).then((res) =>
-
       res.json()
     );
   };
   // console.log(getData())
   let myData = async () => {
-    setLoading(true)
+    setLoading(true);
     let data = await getData(page);
     setUsers(data);
-    setLoading(false)
+    setLoading(false);
     // console.log(data.total_pages)
   };
+
   useEffect(() => {
     myData(page);
-    setsearchParams({page:page})
   }, [page]);
 
-//   console.log(users);
-// let myVal=searchParams.get('page')
-// console.log(myVal)
+  useEffect(() => {
+    setsearchParams({ page: page });
+  }, [page]);
+  // console.log(typeof +searchParams.get("page"));
 
-  return loading?<h1>Loading.......</h1>: (
-    <div style={{marginLeft:'50px',marginRight:'50px',marginBottom:'20px'}}>
+  //   console.log(users);
+  // let myVal=searchParams.get('page')
+  // console.log(myVal)
+
+  return loading ? (
+    <h1>Loading.......</h1>
+  ) : (
+    <div
+      style={{ marginLeft: "50px", marginRight: "50px", marginBottom: "20px" }}
+    >
       <h1>Users Page</h1>
-    <div style={{display:'grid', gridTemplateColumns:'repeat(2,1fr)', }}>
-      
-      {users?.data?.map((ele)=>(
-        <div style={{border:'1px solid red',padding:'5px',margin:'5px'}} key={ele.id}>
-            <img src={ele.avatar}/>
+      <div style={{ display: "grid", gridTemplateColumns: "repeat(2,1fr)" }}>
+        {users?.data?.map((ele) => (
+          <div
+            style={{ border: "1px solid red", padding: "5px", margin: "5px" }}
+            key={ele.id}
+          >
+            <img src={ele.avatar} />
             <h4>{ele.first_name}</h4>
-            <NavLink style={{textDecoration:'none',color:'blue'}} to={`/user/${ele.id}`}>About more</NavLink>    
-
-        </div>
-      ))}
-    </div>
-    <button disabled={page==1} onClick={()=>setpage(page-1)}>Prev</button>
-    <button >{page}</button>
-    <button disabled={page==users.total_pages} onClick={()=>setpage(page+1)}>Next</button>
+            <NavLink
+              style={{ textDecoration: "none", color: "blue" }}
+              to={`/user/${ele.id}`}
+            >
+              About more
+            </NavLink>
+          </div>
+        ))}
+      </div>
+      <button disabled={page == 1} onClick={() => setpage(page - 1)}>
+        Prev
+      </button>
+      <button>{page}</button>
+      <button
+        disabled={page == users.total_pages}
+        onClick={() => setpage(page + 1)}
+      >
+        Next
+      </button>
     </div>
   );
 }
