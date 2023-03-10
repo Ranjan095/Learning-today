@@ -16,15 +16,16 @@ function App() {
 
   return (
     <div className="App">
- 
+ {/* <Count/>  */}
      {/* <UseReducer/> */}
      {/* <Form/> */}
     {/* <CustomHooks/>
      
-    {/* <Count/> */}
-    <Timer/>
+    
+
+    {/* <Timer/> */}
     {/* <ClickMe/> */}
-    {/* <Throttle/> */}
+    <Throttle/>
     </div>
   );
 }
