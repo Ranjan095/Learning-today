@@ -1,0 +1,10 @@
+.NavLink{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.nav{
+    text-decoration: none;
+  font-size: large;
+}
+
