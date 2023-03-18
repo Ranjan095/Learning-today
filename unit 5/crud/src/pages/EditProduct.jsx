@@ -1,14 +1,16 @@
 /** @format */
 import React, { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import { patchProduct } from "../Redux/Adimin/action";
 
-const Edit = () => {
+const EditProduct = () => {
 
   
   let [data, setData] = useState({});
+  let [success,setSuccess]=useState(false)
   let { id } = useParams();
-
+let dispatch=useDispatch()
 
  let products = useSelector((store) => store.adiminReducer.products);
   let handleChange=(e)=>{
@@ -18,7 +20,10 @@ const Edit = () => {
   };
   let handleSubmit=(e)=>{
     e.preventDefault();
-   console.log(data)
+   console.log('edit',data)
+   dispatch(patchProduct(+id,data)).then(()=>{
+    setSuccess(!success)
+   })
   }
   // console.log(data)
   useEffect(() => {
@@ -30,6 +35,7 @@ const Edit = () => {
   return (
     <div>
       <h1>Edit product: {id}</h1>
+      <h1 style={{color:'green'}}>{success && 'Product Edited successful'}</h1>
       <form className="input" onSubmit={handleSubmit}>
         <input type="text" value={data.image}  onChange={handleChange} name='image'/>
         <input type="text" value={data.brand}  onChange={handleChange} name='brand'/>
@@ -48,4 +54,4 @@ const Edit = () => {
   );
 };
 
-export default Edit;
+export default EditProduct;

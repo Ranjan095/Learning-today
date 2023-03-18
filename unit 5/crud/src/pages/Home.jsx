@@ -13,6 +13,7 @@ const Home = () => {
   let location=useLocation()
   
 
+
   // console.log(location)
 // console.log(searchParam.get('order'))
   // console.log(searchParam.getAll('catogary'))
@@ -27,7 +28,10 @@ const Home = () => {
 
   useEffect(() => {
     dispatch(getProduct(filterarray));
+    // getProduct(dispatch,filterarray)
   }, [location.search]);
+
+
 
   let { isLoading, isError, products } = useSelector(
     (store) => store.adiminReducer

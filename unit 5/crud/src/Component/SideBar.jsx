@@ -32,7 +32,7 @@ const SideBar = () => {
   //   console.log(catogary);
   useEffect(() => {
     let obj = {
-      catogary,
+      catogary:catogary
     };
     order && (obj.order = order);
     setSearchParam(obj);

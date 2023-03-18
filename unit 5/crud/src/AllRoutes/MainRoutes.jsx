@@ -5,7 +5,7 @@ import Login from '../pages/Login'
 import Admin from '../pages/Admin'
 import PrivetRoute from './PrivetRoute'
 import SingleProductPage from '../pages/SingleProductPage'
-import Edit from '../pages/Edit'
+import EditProduct from '../pages/EditProduct'
 
 const MainRoutes = () => {
   return (
@@ -15,7 +15,7 @@ const MainRoutes = () => {
             <Route path='/login' element={<Login/>}/>
             <Route path='/admin' element={ <PrivetRoute> <Admin/> </PrivetRoute>}/>
             <Route path='/porducts/:id' element={<SingleProductPage/>}/>
-            <Route path='/products/:id/edit' element={<Edit/>}></Route>
+            <Route path='/products/:id/edit' element={<EditProduct/>}></Route>
         </Routes>
     </div>
   )
