@@ -15,7 +15,7 @@ const MainRoutes = () => {
             <Route path='/login' element={<Login/>}/>
             <Route path='/admin' element={ <PrivetRoute> <Admin/> </PrivetRoute>}/>
             <Route path='/porducts/:id' element={<SingleProductPage/>}/>
-            <Route path='/products/:id/edit' element={<EditProduct/>}></Route>
+            <Route path='/products/:id/edit' element={<PrivetRoute> <EditProduct/> </PrivetRoute>}></Route>
         </Routes>
     </div>
   )

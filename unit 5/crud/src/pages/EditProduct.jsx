@@ -12,7 +12,7 @@ const EditProduct = () => {
   let { id } = useParams();
 let dispatch=useDispatch()
 
- let products = useSelector((store) => store.adiminReducer.products);
+ let products = useSelector((store) => store.ProductReducer.products);
   let handleChange=(e)=>{
     let {name,value}=e.target;
     console.log(name,value)

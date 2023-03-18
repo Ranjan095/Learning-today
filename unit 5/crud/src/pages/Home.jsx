@@ -34,7 +34,7 @@ const Home = () => {
 
 
   let { isLoading, isError, products } = useSelector(
-    (store) => store.adiminReducer
+    (store) => store.ProductReducer
   );
   // console.log(products,isLoading,isError)
 

@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import "./Admin.css";
 import { postProduct } from "../Redux/Adimin/action";
 import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 let obj = {
   image: "",
@@ -16,7 +17,8 @@ let obj = {
 
 const Admin = () => {
   let [item, setItem] = useState(obj);
-
+let location=useLocation();
+console.log(location)
   let dispatch = useDispatch();
 
   let handleChange = (e) => {
