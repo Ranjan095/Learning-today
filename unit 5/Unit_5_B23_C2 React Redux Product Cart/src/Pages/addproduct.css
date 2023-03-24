@@ -1,0 +1,15 @@
+.add-product-wrapper{
+    text-align: left;
+    font-size: 19px;
+    width: fit-content;
+    margin: auto;
+}
+
+.form-element-div{
+    display: flex;
+    padding: 5px 0;
+}
+
+.form-label{
+    width: 160px;
+}

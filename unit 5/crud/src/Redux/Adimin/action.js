@@ -19,14 +19,16 @@ import {
 
 export let getProduct = (filterarray)=> (dispatch) => {
   dispatch({ type: GET_PRODUCT_REQUEST });
-  axios
+  return axios
     .get(`http://localhost:8080/products`,filterarray)
     .then((res) => {
-      dispatch({ type: GET_PRODUCT_SUCCESS, payload: res.data });
+      // res.data
+       dispatch({ type: GET_PRODUCT_SUCCESS, payload: res.data });
       // console.log(res.data)
     })
     .catch((err) => {
       dispatch({ type: GET_PRODUCT_ERROR });
+      //  err
     });
 };
 
