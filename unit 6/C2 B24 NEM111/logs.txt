@@ -1,0 +1,11 @@
+Method:POST, Route:/students/addstudent, user-agent:undefined
+Method:POST, Route:/instructors/addinstructor, user-agent:undefined
+Method:GET, Route:/students, user-agent:undefined
+Method:GET, Route:/students/1, user-agent:undefined
+Method:GET, Route:/instructors, user-agent:undefined
+Method:GET, Route:/instructors/1, user-agent:undefined
+Method:PATCH, Route:/students/1?role=admin&pass=7877, user-agent:undefined
+Method:PATCH, Route:/students/1, user-agent:undefined
+Method:DELETE, Route:/students/1, user-agent:undefined
+Method:DELETE, Route:/students/1?role=instructor&pass=7877, user-agent:undefined
+Method:POST, Route:/students/addstudent, user-agent:undefined
