@@ -2,7 +2,6 @@
 
 // write the routes for /students end poient and add middlewares.
 const fs = require("fs");
-const validator = require("../middleware/validator.middleware")
 
 let addStudent = (req, res) => {
   let data = req.body;
