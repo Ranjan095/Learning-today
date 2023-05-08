@@ -1,0 +1,6 @@
+{
+ "title":"learning MongoDb.js",
+ "body":"it's 2month course",
+ "device":"laptop",
+ "no_of_comments":10
+}

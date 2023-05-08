@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Apple Watch Ultra",
+        "category": "Watch",
+        "image": "https://rukminim1.flixcart.com/image/832/832/xif0q/smartwatch/h/1/t/-original-imaghxg9pcvwvpcf.jpeg?q=70",
+        "size": "small",
+        "storages":["32GB"],
+        "price": [799],
+        "description":"APPLE Watch Ultra GPS + Cellular - ECG App, Temp sensor, Blood oxygen, Fall Detection  (Orange Alpine Strap, Small)",
+        "addedAt": null,
+        "updatedAt": null
+      },
+      {
+          "title": "Apple Watch SE",
+          "category": "Watch",
+          "image": "https://rukminim1.flixcart.com/image/832/832/xif0q/smartwatch/l/n/a/-original-imaghxg9zajzqrtf.jpeg?q=70",
+          "size": "small",
+          "storages":["32GB"],
+          "price": [299],
+          "description":"APPLE Watch SE GPS (2nd Gen) Heart Rate Monitor, Crash Detection, Sleep Tracking  (Midnight Strap, 40mm)",
+          "addedAt": null,
+          "updatedAt": null
+        },
+        {
+            "title": "Apple Watch Series 8",
+            "category": "Watch",
+            "image": "https://rukminim1.flixcart.com/image/832/832/xif0q/smartwatch/l/0/k/-original-imaghxg9vjgmyv9v.jpeg?q=70",
+            "size": "small",
+            "storages":["32GB"],
+            "price": [499],
+            "description":"APPLE Watch Series 8 GPS with ECG app, Temperature sensor, IPX6, Fall/Crash Detection  (Midnight Strap, Regular)",
+            "addedAt": null,
+            "updatedAt": null
+          },
+          {
+            "title": "",
+            "category": "Watch",
+            "image": "",
+            "size": "",
+            "storages":["32GB"],
+            "price": [799],
+            "description":"",
+            "addedAt": null,
+            "updatedAt": null
+          }
+]
+    
