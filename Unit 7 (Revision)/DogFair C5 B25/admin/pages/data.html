@@ -1,0 +1,58 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./data.css" />
+  </head>
+  <body>
+    <div id="dummy">
+      <h1>Total Cats :- <span id="totalCount"></span></h1>
+      <div>
+        <label>Filter By :-</label>
+        <select id="filter">
+          <option value="">Select Gender</option>
+          <option value="Female">Female</option>
+          <option value="Male">Male</option>
+        </select>
+      </div>
+      <!-- <h1>DATA PAGE</h1> -->
+
+      <div>
+        <label for="">Search Cats :-</label>
+        <input id="search" placeholder="type...." />
+      </div>
+      <div>
+        <label for="">Sort By:-</label>
+        <select name="" id="sort">
+          <option value="">Select</option>
+          <option value="asc">Low to High</option>
+          <option value="desc">High to Low</option>
+        </select>
+      </div>
+    </div>
+    <div id="edit_box">
+      <form id="edit">
+        <label>Name :-</label>
+        <input type="text" required id="name" /><br /><br />
+        <label>Age :-</label>
+        <input type="number" required id="age" /><br /><br />
+
+        <label>Gender :-</label>
+        <input type="text" required id="gender" /><br /><br />
+
+        <label>City :-</label>
+        <input type="text" required id="place" /><br /><br />
+        <input type="submit" />
+      </form>
+    </div>
+    <div id="container"></div>
+    <button id="pre">pre</button><button id="page"></button
+    ><button id="next">Next</button>
+  </body>
+  <script src="../script/data.js"></script>
+</html>
