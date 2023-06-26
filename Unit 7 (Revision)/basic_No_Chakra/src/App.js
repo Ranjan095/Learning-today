@@ -10,14 +10,16 @@ import { Crousel } from './Pages/Crousel';
 import CounterWithCustomHooks from './Pages/CounterWithCustomHooks';
 import Debounce from './Pages/Debounce';
 import { Throtling } from './Pages/Throtling';
+import { Interview } from './Pages/Interview';
+import Flex from './Pages/SardhaDidi/Flex';
 
 
 
 
 function App() {
   return (
-    <div className="App">
-     <h1>Basic</h1>
+    <div>
+     {/* <h1>Basic</h1> */}
      {/* <UseMemo/> */}
      {/* <Form /> */}
      {/* <Call_apply_bind/> */}
@@ -27,8 +29,9 @@ function App() {
 {/* <FileUpload/> */}
 {/* <CounterWithCustomHooks/> */}
 {/* <Debounce/> */}
-<Throtling/>
-     
+{/* <Throtling/> */}
+{/* <Interview/> */}
+   <Flex/>
     </div>
   );
 }

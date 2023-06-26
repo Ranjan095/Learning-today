@@ -1,0 +1,33 @@
+
+#container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+.box{
+    
+    margin: 7px;
+    padding: 7px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   
+}
+.imge-box{
+    width: 400px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+}
+.info-box{
+    margin: 7px;
+    padding: 7px;
+    border: 1px solid;
+    display:flex;
+    align-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.image{
+    width: 200px;
+}
+
+.list{
+    color: red;
+}

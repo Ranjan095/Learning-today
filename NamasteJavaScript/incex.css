@@ -1,0 +1,14 @@
+#box{
+    height: 200px;
+    background-color: pink;
+    padding-left: 30px;
+}
+h1{
+    width: 300px;
+    height: 100px;
+    border: solid;
+    border-radius: 10px;
+    padding:20px;
+    
+
+}

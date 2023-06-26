@@ -1,0 +1,11 @@
+.about-layout-nav{
+   margin: 20px;
+}
+.about-layout-nav ul{
+display: flex;
+gap: 25px;
+
+}
+.about-layout-nav li{
+    list-style-type: none;
+}

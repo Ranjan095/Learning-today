@@ -1,0 +1,8 @@
+#box{
+    text-align: center;
+}
+.route{
+    
+    display: flex;
+    gap: 50px;
+}

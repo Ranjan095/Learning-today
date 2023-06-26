@@ -1,39 +1,34 @@
 {
   "todos": [
     {
-      "title": "asdfa",
-      "status": false,
-      "id": 1
+      "id": 1,
+      "title": "json-server",
+      "status": false
     },
     {
-      "title": "dfasa",
+      "title": "react-redux",
       "status": false,
       "id": 2
     },
     {
-      "title": "dfsaf",
+      "title": "MongoDB",
       "status": false,
       "id": 3
     },
     {
-      "title": "dfasfa",
+      "title": "Python",
       "status": false,
       "id": 4
     },
     {
-      "title": "sdafa",
+      "title": "redux",
       "status": false,
       "id": 5
     },
     {
-      "title": "aaa",
+      "title": "Next.js",
       "status": false,
       "id": 6
-    },
-    {
-      "title": "aaa",
-      "status": false,
-      "id": 7
     }
   ]
 }

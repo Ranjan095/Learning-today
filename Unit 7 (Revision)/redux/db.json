@@ -1,0 +1,79 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "status": false
+    },
+    {
+      "title": "to go to market",
+      "status": false,
+      "id": 2
+    },
+    {
+      "title": "adfas",
+      "status": false,
+      "id": 3
+    },
+    {
+      "title": "asdfsa",
+      "status": false,
+      "id": 4
+    },
+    {
+      "title": "dsfgsgfs",
+      "status": false,
+      "id": 5
+    },
+    {
+      "title": "dfaa",
+      "status": false,
+      "id": 6
+    },
+    {
+      "title": "asda",
+      "status": false,
+      "id": 7
+    },
+    {
+      "title": "ASSIGNMENT",
+      "status": false,
+      "id": 8
+    },
+    {
+      "title": "GDSF",
+      "status": false,
+      "id": 9
+    },
+    {
+      "title": "go to patna",
+      "status": false,
+      "id": 10
+    },
+    {
+      "title": "dfgsgs",
+      "status": false,
+      "id": 11
+    },
+    {
+      "title": "Ravindra",
+      "status": false,
+      "id": 12
+    },
+    {
+      "title": "hello",
+      "status": false,
+      "id": 13
+    },
+    {
+      "title": "lkda;f",
+      "status": false,
+      "id": 14
+    },
+    {
+      "title": "aaaaa",
+      "status": false,
+      "id": 15
+    }
+  ]
+}
