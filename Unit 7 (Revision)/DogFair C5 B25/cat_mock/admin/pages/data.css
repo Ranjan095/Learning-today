@@ -1,0 +1,66 @@
+
+
+  @media screen and (max-width: 1500px) {
+    #container {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    
+    }
+  }
+  @media screen and (max-width: 800px) {
+    #container {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    
+    }
+  }
+  @media screen and (max-width: 500px) {
+    #container {
+        text-align: center;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+  }
+
+#container>div {
+    text-align: center;
+    box-shadow: rgba(227, 115, 115, 0.4) 0px 30px 90px;
+    padding: 20px;
+    border-radius: 20px;
+}
+
+#container>div:hover {
+    border: 2px solid rgb(52, 173, 81);
+}
+
+.image {
+    border-radius: 40%;
+    width: 100px;
+}
+
+#dummy {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    align-items: center;
+}
+
+#edit_box {
+
+    text-align: center;
+}
+
+#edit {
+    display: inline-block;
+    text-align: center;
+    box-shadow: rgba(209, 48, 48, 0.25) 0px 54px 55px, rgba(223, 56, 56, 0.12) 0px -12px 30px, rgba(233, 75, 75, 0.12) 0px 4px 6px, rgba(188, 93, 93, 0.17) 0px 12px 13px, rgba(219, 95, 95, 0.09) 0px -3px 5px;
+    width: 400px;
+    padding: 30px;
+    margin: 20px;
+    border-radius: 20px;
+}

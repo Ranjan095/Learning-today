@@ -1,0 +1,13 @@
+{
+  "student": [
+    { "name": "Ranjan", "age": 26 },
+    { "name": "Sandhya", "age": 25 },
+    { "name": "Naina", "age": 24 },
+    { "name": "Ajit", "age": 28 }
+  ],
+  "teacher": [
+    { "name": "Pulkit", "age": 35 },
+    { "name": "Nrupul", "age": 45 },
+    { "name": "Yogesh", "age": 40 }
+  ]
+}

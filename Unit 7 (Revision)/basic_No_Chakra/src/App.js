@@ -12,13 +12,15 @@ import Debounce from './Pages/Debounce';
 import { Throtling } from './Pages/Throtling';
 import { Interview } from './Pages/Interview';
 import Flex from './Pages/SardhaDidi/Flex';
+import { MultiInputBox } from './MultiInputBox';
+
 
 
 
 
 function App() {
   return (
-    <div>
+    <div className='App'>
      {/* <h1>Basic</h1> */}
      {/* <UseMemo/> */}
      {/* <Form /> */}
@@ -31,7 +33,9 @@ function App() {
 {/* <Debounce/> */}
 {/* <Throtling/> */}
 {/* <Interview/> */}
-   <Flex/>
+   {/* <Flex/> */}
+   <MultiInputBox/>
+  
     </div>
   );
 }
