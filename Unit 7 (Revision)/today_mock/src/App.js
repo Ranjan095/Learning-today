@@ -1,20 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+/** @format */
 
-import PomodoroTimer from './Components/PomodoroTimer';
-import { Data } from './Components/forthMock/Data';
-import { SignUp } from './Components/Page/SignUp';
-import { AllRoute } from './Components/AllRoute';
+import logo from "./logo.svg";
+import "./App.css";
+import { Basic } from "./pages/TypeScript/Basic.tsx";
 
-
-function App() {
+let App = () => {
+  let person = {
+    name: "Ranjan",
+    age: 26,
+    color: "white",
+  };
   return (
     <div className="App">
-  {/* <PomodoroTimer/> */}
-{/* <Data/> */}
-<AllRoute/>
+      <Basic {...person} />
     </div>
   );
-}
+};
 
 export default App;

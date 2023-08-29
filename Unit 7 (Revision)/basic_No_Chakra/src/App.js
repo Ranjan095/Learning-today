@@ -13,6 +13,7 @@ import { Throtling } from './Pages/Throtling';
 import { Interview } from './Pages/Interview';
 import Flex from './Pages/SardhaDidi/Flex';
 import { MultiInputBox } from './MultiInputBox';
+import { Animation } from './Pages/Animation';
 
 
 
@@ -34,7 +35,8 @@ function App() {
 {/* <Throtling/> */}
 {/* <Interview/> */}
    {/* <Flex/> */}
-   <MultiInputBox/>
+   {/* <MultiInputBox/> */}
+   <Animation/>
   
     </div>
   );

@@ -1,0 +1,40 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <style>
+      
+      #body {
+        background-color: black;
+        color: white;
+      }
+    
+    </style>
+  </head>
+  <body id="body">
+    <h1>welcome to Zomato App</h1>
+    <div>
+      {% for ele in ab %}
+      <h1>{{ele}}</h1>
+      {% endfor %}
+    </div>
+    <div>
+      <table border="2px" cellpadding="10px">
+        <tr>
+          <th>Name</th>
+          <th>MobileNo</th>
+        </tr>
+        {% for key in list %}
+        <tr>
+          <td>{{key.name}}</td>
+          <td>{{key.mobileNo}}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

@@ -6,14 +6,52 @@ const { userRoute } = require("./Route/UserRoute");
 var jwt = require("jsonwebtoken");
 const { auth } = require("./Middlewere/auth");
 const { noteRoute } = require("./Route/NoteRoute");
+
+const { ProModal } = require("./Model/proModule");
 let app = express();
 app.use(express.json());
 app.use("/user", userRoute);
 app.use("/note", noteRoute);
 
+// let midd = (req, res, next) => {
+//   try {
+//     fs.appendFile("./text.txt", timeStamp());
+//     next();
+//   } catch (error) {
+//     res.status(400).send(error);
+//   }
+// };
+
 app.get("/", (req, res) => {
-  res.send("home page");
-  console.log("home page");
+  let { title, price, dis } = req.body;
+
+  try {
+    let requireData = {};
+
+    if (title) {
+      requireData.title = {$regex:{title,includes:"i"}};
+    }
+    if (price) {
+      requireData.price ={$regex:{title,includes:"i"}};
+    }
+    if (dis) {
+      requireData.dis = {$regex:{dis,includes:"i"}};
+    }
+    let filteredData = ProModal.find(requireData);
+    res.status(200).send(filteredData);
+  } catch (error) {
+    res.status(400).send(err.message);
+  }
+});
+
+app.post("/pro", async (req, res) => {
+  try {
+    let newPro = new ProModal(req.body);
+    await newPro.save();
+    res.send("collection has been created with data");
+  } catch (error) {
+    res.status(400).send(error.message);
+  }
 });
 
 // Private Route without middlewere
