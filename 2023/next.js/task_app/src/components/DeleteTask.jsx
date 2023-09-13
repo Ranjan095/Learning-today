@@ -15,7 +15,7 @@ const DeleteTask = ({ showDeleteModal, setShowDeleteModal, taskId }) => {
       .delete(`/api/task/${taskId}`)
       .then((res) => {
         setLoading(false);
-        console.log(res);
+        // console.log(res);
         setShowDeleteModal(false);
         toast.success("task has been deleted",{
           position:"top-center"

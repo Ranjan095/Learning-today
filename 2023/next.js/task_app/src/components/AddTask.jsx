@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Modal from "./Modal";
 import axios from "axios";
+import { toast } from "react-toastify";
 let obj = {
   title: "",
   description: "",
@@ -19,7 +20,11 @@ const AddTask = ({ showTaskModal, setShowTaskModal }) => {
       .post("/api/task", task)
       .then((res) => {
         setLoading(false);
+        setTask(obj)
         setShowTaskModal(false);
+        toast.success("Task has been added!",{
+          position:"top-center"
+        })
         // console.log(res);
       })
       .catch((err) => {
