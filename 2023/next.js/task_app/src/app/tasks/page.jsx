@@ -48,51 +48,44 @@ const Task = () => {
     setShowDeleteModal(true);
   };
 
-  // let handleLogout = async () => {
-  //   try {
-  //     let res = await axios.get("/api/users/logout");
-  //     console.log(res.data);
-
-  //     toast.success(res.data, {
-  //       position: "top-center",
-  //     });
-  //     route.push("/login");
-  //   } catch (error) {
-  //     console.log(error);
-  //     toast.error("Oops somting went wrong", {
-  //       position: "top-center",
-  //     });
-  //   }
-  // };
-
   return (
     <div className=" m-3 min-h-screen">
       {/* <h1 className="text-4xl"> {isLoading ? "Loading..." : ""} </h1> */}
       <div className="grid justify-end">
-        {/* <button
-          onClick={handleLogout}
-          type="button"
-          class="mt-4 rounded-sm bg-black px-2.5 py-1 text-[15px] font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-        >
-          LogOut
-        </button> */}
-        <button
-          onClick={() => setShowTaskModal(true)}
-          type="button"
-          class="mt-4 rounded-sm bg-black px-2.5 py-1 text-[15px] font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-        >
-          Add task
-        </button>
+        {data.length > 0 && (
+          <button
+            onClick={() => setShowTaskModal(true)}
+            type="button"
+            class="mt-4 rounded-sm bg-black px-2.5 py-1 text-[15px] font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+          >
+            Add task
+          </button>
+        )}
       </div>
-
-      <div className="grid grid-cols-3">
+      {data.length === 0 && (
+        <div className="text-center font-bold">
+          {" "}
+          <h1 className="text-2xl">
+            Oops! You have no task
+          </h1>
+          <h1>Create you first task!</h1>
+          <button
+            onClick={() => setShowTaskModal(true)}
+            type="button"
+            class="mt-4 rounded-sm bg-blue-700 px-2.5 py-1 text-[15px] font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+          >
+            Add task
+          </button>
+        </div>
+      )}
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {data?.map((ele, i) => {
           return (
-            <div key={i} class="w-[300px] rounded-md border">
+            <div key={i} class=" rounded-md border m-1 sm:m-1 md:m-2">
               <img
                 src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixlib=rb-4.0.3&amp;ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGJsb2d8ZW58MHx8MHx8&amp;auto=format&amp;fit=crop&amp;w=800&amp;q=60"
                 alt="Laptop"
-                class="h-[200px] w-full rounded-md object-cover"
+                class=" w-full rounded-md object-cover"
               />
               <div class="p-4">
                 <h1 class="text-lg font-semibold">{ele.title}</h1>

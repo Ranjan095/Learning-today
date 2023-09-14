@@ -7,7 +7,6 @@ import { toast } from "react-toastify";
 let obj = {
   title: "",
   description: "",
-  userId: "64fa45416cda074a3af2ef8f",
 };
 const AddTask = ({ showTaskModal, setShowTaskModal }) => {
   let [loading, setLoading] = useState(false);
@@ -20,11 +19,11 @@ const AddTask = ({ showTaskModal, setShowTaskModal }) => {
       .post("/api/task", task)
       .then((res) => {
         setLoading(false);
-        setTask(obj)
+        setTask(obj);
         setShowTaskModal(false);
-        toast.success("Task has been added!",{
-          position:"top-center"
-        })
+        toast.success("Task has been added!", {
+          position: "top-center",
+        });
         // console.log(res);
       })
       .catch((err) => {
@@ -91,7 +90,7 @@ const AddTask = ({ showTaskModal, setShowTaskModal }) => {
                     setTask({ ...task, description: e.target.value })
                   }
                   value={task.description}
-                  className="flex h-10 w-full rounded-md border border-gray-100 bg-transparent px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
+                  className=" h-20 md:h-25 lg:h-30 w-full rounded-md border border-gray-100 bg-transparent px-3 py-2 text-sm placeholder:text-gray-500 focus:outline-none focus:ring-1 focus:ring-gray-400 focus:ring-offset-1 disabled:cursor-not-allowed disabled:opacity-50"
                   type="text"
                   placeholder="Description"
                 ></textarea>

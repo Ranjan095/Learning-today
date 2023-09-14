@@ -11,7 +11,7 @@ const Modal = ({ isVisible, onClose, children }) => {
   return (
     <div
       id="wraper"
-      className=" grid place-content-center fixed inset-0 backdrop-blur-sm "
+      className=" min-w-fit z-10 grid place-content-center fixed inset-0 backdrop-blur-md"
       onClick={handleClose}
     >
       <button
@@ -21,7 +21,7 @@ const Modal = ({ isVisible, onClose, children }) => {
       >
         X
       </button>
-      <div className="bg-blue-300 p-4 rounded-lg min-w-[400px]">{children}</div>
+      <div className="bg-blue-300 mx-1 p-4 rounded-lg min-w-[260px] sm:min-w-[300px] md:min-w-[400px]">{children}</div>
     </div>
   );
 };

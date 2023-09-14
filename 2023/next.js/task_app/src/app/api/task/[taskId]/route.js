@@ -4,6 +4,8 @@ import { connectionDB } from "@/halpers/db";
 import { UserModal } from "@/modals/UserModal";
 import { TaskModal } from "@/modals/taskModel";
 import { NextResponse } from "next/server";
+let jwt = require("jsonwebtoken");
+const dotenv = require("dotenv");
 
 connectionDB();
 
@@ -36,12 +38,17 @@ export async function PATCH(req, { params }) {
 // API for Delete task
 export async function DELETE(req, { params }) {
   try {
-    // let { userId } = await req.json();
+    // gettin current userId using jwt
+    let token = req.cookies.get("token")?.value || "";
+    let decoded = jwt.verify(token, process.env.TOKEN_SECRET);
+
     let { taskId } = params;
     await TaskModal.findByIdAndDelete({ _id: taskId });
 
     // delete from it's parents
-    await UserModal.findByIdAndUpdate("64fa45416cda074a3af2ef8f", { $pull: { myTask: taskId } });
+    await UserModal.findByIdAndUpdate(decoded.id, {
+      $pull: { myTask: taskId },
+    });
     return NextResponse.json(
       { msg: "task has been deleted", success: true },
       { status: 200 }

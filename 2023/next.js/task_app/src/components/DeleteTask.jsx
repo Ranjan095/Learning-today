@@ -39,7 +39,7 @@ const DeleteTask = ({ showDeleteModal, setShowDeleteModal, taskId }) => {
             {loading ? "Deleting..." : "Delete"}
           </h1>
 
-          <p>Are you sure want to delete?</p>
+          <p className="container">Are you sure want to delete?</p>
         </div>
         <div className="flex flex-row justify-center gap-2">
           <button

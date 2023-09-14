@@ -29,6 +29,7 @@ export default function Login() {
           position: "top-center",
         });
         console.log(res);
+        setFormData(obj);
       })
       .catch((err) => {
         setIsLoading(false);
@@ -36,7 +37,7 @@ export default function Login() {
         // console.log();
       });
 
-    console.log(formData);
+    // console.log(formData);
   };
   return (
     <section>
