@@ -28,10 +28,10 @@ export default function Login() {
         setIsLoading(false);
         dispatch({type:GET_USER_SUCCESS})
         router.push("/");
-        // alert("login successful");
-        toast.success("login success!", {
-          position: "top-center",
-        });
+        alert("login successful");
+        // toast.success("login success!", {
+        //   position: "top-center",
+        // });
         // console.log(res);
         setFormData(obj);
       })

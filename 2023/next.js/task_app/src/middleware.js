@@ -1,7 +1,6 @@
 /** @format */
 
 import { NextResponse } from "next/server";
-
 export function middleware(request) {
   let { pathname } = request.nextUrl;
   let isPublicPath = pathname === "/login" || pathname === "/signup";

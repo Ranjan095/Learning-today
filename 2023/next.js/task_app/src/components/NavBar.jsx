@@ -34,31 +34,40 @@ export default function NavBar() {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  let handleLogout = async () => {
-    try {
-      let res = await axios.get("/api/users/logout");
-      // console.log(res.data);
+  // let handleLogout = async () => {
+  //   try {
+  //     let res = await axios.get("/api/users/logout");
 
-      toast.success(res.data, {
-        position: "top-center",
+  //     alert("Logout successful!");
+  //     setUser({});
+  //     route.push("/login");
+  //   } catch (error) {
+  //     console.log(error);
+  //     toast.error("Oops somting went wrong", {
+  //       position: "top-center",
+  //     });
+  //   }
+  // };
+
+  let handleLogout = async () => {
+    axios
+      .get("/api/users/logout")
+      .then((res) => {
+        alert("Logout successful!");
+        setUser({});
+        route.push("/login");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("Somthing went wrong!");
       });
-      setUser({});
-      route.push("/login");
-    } catch (error) {
-      console.log(error);
-      toast.error("Oops somting went wrong", {
-        position: "top-center",
-      });
-    }
   };
 
   return (
     <div className=" fixed top-0 w-full bg-gray-400  ">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-2 sm:px-6 lg:px-8">
         <div className="inline-flex items-center space-x-2">
-          <span>
-          
-          </span>
+          <span></span>
           <span className="font-bold">
             <Link href={"/"}>TaskApp</Link>
           </span>
@@ -128,7 +137,6 @@ export default function NavBar() {
               <div className="px-5 pb-6 pt-5">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center space-x-2">
-                   
                     <span className="font-bold">TaskApp</span>
                   </div>
 
@@ -164,7 +172,7 @@ export default function NavBar() {
                   </nav>
                 </div>
                 {user.name && (
-                  <div className="mt-2 flex gap-2 items-center">
+                  <div className="mt-2 flex justify-end gap-2 items-center">
                     <span className="relative inline-block">
                       <img
                         className="h-8 w-8 rounded-full"
