@@ -5,6 +5,7 @@ import "./globals.css";
 import { Inter } from "next/font/google";
 import Footer from "@/components/Footer";
 import AuthContextProvider from "@/context/authContext";
+import StorProvider from "@/redux/StorProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,11 +21,13 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href="/favicon.ico" />
       </head>
       <body className={inter.className}>
-        <AuthContextProvider>
-          <NavBar />
-          {children}
-          <Footer />
-        </AuthContextProvider>
+        <StorProvider>
+          <AuthContextProvider>
+            <NavBar />
+            {children}
+            <Footer />
+          </AuthContextProvider>
+        </StorProvider>
       </body>
     </html>
   );

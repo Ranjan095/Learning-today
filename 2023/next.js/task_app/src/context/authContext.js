@@ -1,5 +1,6 @@
 /** @format */
 "use client";
+
 import axios from "axios";
 import React, { createContext, useEffect, useState } from "react";
 
@@ -12,9 +13,9 @@ let AuthContextProvider = ({ children }) => {
     try {
       let res = await axios.get("/api/current_user");
       setUser(res.data);
-      console.log(res);
+      console.log(res.data);
     } catch (error) {
-      console.log(error);
+      // console.log(error.message);
     }
   };
 
@@ -23,7 +24,9 @@ let AuthContextProvider = ({ children }) => {
   }, []);
 
   return (
-    <AuthContext.Provider value={{ user,setUser }}>{children}</AuthContext.Provider>
+    <AuthContext.Provider value={{ user, setUser }}>
+      {children}
+    </AuthContext.Provider>
   );
 };
 

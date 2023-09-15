@@ -1,11 +1,13 @@
 /** @format */
 "use client";
+import { GET_USER_SUCCESS } from "@/redux/user/userType";
 import axios from "axios";
 import { ArrowRight } from "lucide-react";
 // import loginPNG from "../../assets/images/login.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 let obj = {
@@ -16,6 +18,7 @@ export default function Login() {
   let [isLoading, setIsLoading] = useState(false);
   let [formData, setFormData] = useState(obj);
   let router = useRouter();
+  let dispatch=useDispatch()
   let handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -23,12 +26,13 @@ export default function Login() {
       .post("/api/users/login", formData)
       .then((res) => {
         setIsLoading(false);
+        dispatch({type:GET_USER_SUCCESS})
         router.push("/");
         // alert("login successful");
         toast.success("login success!", {
           position: "top-center",
         });
-        console.log(res);
+        // console.log(res);
         setFormData(obj);
       })
       .catch((err) => {
