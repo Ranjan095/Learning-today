@@ -5,7 +5,7 @@ import { UserModal } from "@/modals/UserModal";
 import { NextResponse } from "next/server";
 var jwt = require("jsonwebtoken");
 
-connectionDB()
+connectionDB();
 
 // post method
 export let POST = async (req) => {
