@@ -18,7 +18,9 @@ export default function Login() {
   let [isLoading, setIsLoading] = useState(false);
   let [formData, setFormData] = useState(obj);
   let router = useRouter();
-  let dispatch=useDispatch()
+  let dispatch = useDispatch();
+
+
   let handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -26,8 +28,8 @@ export default function Login() {
       .post("/api/users/login", formData)
       .then((res) => {
         setIsLoading(false);
-        dispatch({type:GET_USER_SUCCESS})
-        router.push("/");
+        dispatch({ type: GET_USER_SUCCESS });
+        router.push("/tasks");
         alert("login successful");
         // toast.success("login success!", {
         //   position: "top-center",
