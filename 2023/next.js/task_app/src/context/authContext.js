@@ -13,9 +13,10 @@ let AuthContextProvider = ({ children }) => {
     try {
       let res = await axios.get("/api/current_user");
       setUser(res.data);
-      console.log(res.data);
+      // console.log(res.data);
     } catch (error) {
-      // console.log(error.message);
+      console.log("AuthContext=====>", error);
+      setUser({})
     }
   };
 

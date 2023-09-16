@@ -30,6 +30,9 @@ export default function NavBar() {
 
   let { user, setUser } = useContext(AuthContext);
   let route = useRouter();
+
+  // console.log(user);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -113,17 +116,21 @@ export default function NavBar() {
 
           {!user.name && (
             <div className="space-x-2">
-              <button
-                type="button"
-                className="border border-black rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              >
-                <Link href={"/signup"}>Sign In</Link>
+              <button className="my-2" type="button">
+                <Link
+                  className="border border-black rounded-md bg-transparent px-3 py-2 text-sm font-semibold text-black hover:bg-black/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                  href={"/signup"}
+                >
+                  Sign In
+                </Link>
               </button>
-              <button
-                type="button"
-                className="rounded-md border border-black hover:bg-black/10 px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-              >
-                <Link href={"/login"}>Log In</Link>
+              <button className="my-2" type="button">
+                <Link
+                  className="rounded-md border border-black px-3 py-2 hover:bg-black/10 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
+                  href={"/login"}
+                >
+                  Log In
+                </Link>
               </button>
             </div>
           )}

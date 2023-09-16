@@ -1,12 +1,13 @@
 /** @format */
 "use client";
+import { AuthContext } from "@/context/authContext";
 import { GET_USER_SUCCESS } from "@/redux/user/userType";
 import axios from "axios";
 import { ArrowRight } from "lucide-react";
 // import loginPNG from "../../assets/images/login.png";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -19,7 +20,7 @@ export default function Login() {
   let [formData, setFormData] = useState(obj);
   let router = useRouter();
   let dispatch = useDispatch();
-
+  let { user, setUser } = useContext(AuthContext);
 
   let handleSubmit = (e) => {
     e.preventDefault();
@@ -27,6 +28,8 @@ export default function Login() {
     axios
       .post("/api/users/login", formData)
       .then((res) => {
+        setUser(res.data.user);
+        console.log(res.data.user);
         setIsLoading(false);
         dispatch({ type: GET_USER_SUCCESS });
         router.push("/tasks");

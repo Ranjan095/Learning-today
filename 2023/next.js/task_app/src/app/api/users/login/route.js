@@ -40,6 +40,7 @@ export let POST = async (req) => {
     let response = NextResponse.json({
       msg: "login successful",
       success: true,
+      user
     });
     response.cookies.set("token", token, { httpOnly: true, expiresIn: "1d" });
 
